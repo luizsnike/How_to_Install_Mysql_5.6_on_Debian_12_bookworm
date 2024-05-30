@@ -13,10 +13,10 @@ if [ -e "$MYSQL_FILE" ] ; then
         mv $MYSQL_FILE mysql.tar.gz
 else
         wget "https://downloads.mysql.com/archives/get/p/23/file/$MYSQL_FILE"
+        mv $MYSQL_FILE mysql.tar.gz
 fi
 groupadd mysql
 useradd -g mysql mysql
-mv $MYSQL_FILE mysql.tar.gz
 tar -xvf mysql.tar.gz
 rm mysql.tar.gz
 mv mysql-* mysql
